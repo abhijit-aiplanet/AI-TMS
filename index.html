@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Enhanced Transport Management System</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <!-- Login Screen -->
+    <main id="login-screen" class="flex flex-col items-center justify-center" style="min-height:100vh; gap:24px;">
+      <h1>Welcome</h1>
+      <p>Sign in to access the AI-enhanced transport management suite.</p>
+      <form id="login-form" class="flex flex-col gap-16" style="width:320px;">
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input id="email" type="email" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <input id="password" type="password" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn--primary">Login</button>
+        <p id="login-error" class="hidden" style="color: var(--color-error); text-align: center; margin-top: 8px; margin-bottom: 0;"></p>
+      </form>
+    </main>
+
+    <!-- Application Layout -->
+    <div id="app" class="hidden">
+      <header class="app-header flex items-center justify-between px-16 py-8">
+        <h2>AI-Enhanced TMS</h2>
+        <div class="flex items-center gap-8">
+          <button id="theme-toggle" class="btn btn--secondary btn--sm" title="Toggle light/dark mode">🌓 Theme</button>
+          <button id="logout" class="btn btn--outline btn--sm">Logout</button>
+        </div>
+      </header>
+      <div class="app-body flex">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><button data-view="dashboard" class="nav-item active">Dashboard</button></li>
+            <li><button data-view="transport-management" class="nav-item">Transport Management</button></li>
+            <li><button data-view="transport-planning" class="nav-item">Transport Planning</button></li>
+            <li><button data-view="transport-execution" class="nav-item">Transport Execution</button></li>
+            <li><button data-view="reviews-analytics" class="nav-item">Reviews & Analytics</button></li>
+            <li><button data-view="settings" class="nav-item">Settings</button></li>
+          </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <section id="content" class="content flex-1 px-16 py-16"></section>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
